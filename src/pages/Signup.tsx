@@ -95,7 +95,7 @@ export default function Signup() {
           <span>
             {passwordLeastCaracteres
               ? errorMessage(
-                  'A senha deve contém ao menos 8 caracteres, 1 maiúscula e um número.'
+                  'A senha deve contém ao menos 8 caracteres, contendo ao menos 1 maiúscula e 1 número e 1 caractere especial.'
                 )
               : null}
           </span>
