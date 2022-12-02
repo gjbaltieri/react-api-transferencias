@@ -9,7 +9,7 @@ import LoginButton from './Login/LoginButton';
 export default function Header() {
   const { user } = useContext(AuthContext);
   return (
-    <header className='flex flex-1  justify-between items-center w-full h-auto p-2 bg-white border border-b-purple-700'>
+    <header className='flex flex-1  justify-between items-center w-full h-auto p-2 bg-white border border-b-gray-700'>
       <a className='flex justify-center cursor-pointer h-10' href='/'>
         <Logo />
       </a>
