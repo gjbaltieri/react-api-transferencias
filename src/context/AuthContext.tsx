@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }: any) => {
   useEffect(() => {
     const localToken = localStorage.getItem('token');
     if (localToken) {
-      const userVerify = async () => {
+      (async () => {
         try {
           const { data } = await axios.post(
             'https://api-transferencias.onrender.com/token',
@@ -31,8 +31,7 @@ export const AuthProvider = ({ children }: any) => {
           setLoading(false);
           setUser(null);
         }
-      };
-      userVerify();
+      })();
     } else {
       setUser(null);
       setLoading(false);
