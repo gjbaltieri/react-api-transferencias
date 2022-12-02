@@ -30,13 +30,34 @@ export default function AppRoutes() {
     }
     return children;
   };
+  const Logged = ({ children }: any) => {
+    const { authenticated, loading } = useContext(AuthContext);
+    if (loading) {
+      return (
+        <div className='flex flex-1 m-auto h-screen items-center justify-center'>
+          <LoadingSpinner />;
+        </div>
+      );
+    }
+    if (authenticated) {
+      return <Navigate to={'/'}></Navigate>;
+    }
+    return children;
+  };
 
   return (
     <Router>
       <AuthProvider>
         <Routes>
           <Route path='/' element={<Home />} />,
-          <Route path='/login' element={<Login />} />
+          <Route
+            path='/login'
+            element={
+              <Logged>
+                <Login />
+              </Logged>
+            }
+          />
           ,
           <Route path='/cadastrar' element={<Signup />} />,
           <Route
@@ -63,3 +84,4 @@ export default function AppRoutes() {
     </Router>
   );
 }
+
