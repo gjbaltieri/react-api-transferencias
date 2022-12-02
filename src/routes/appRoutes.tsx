@@ -13,6 +13,7 @@ import { AuthContext, AuthProvider } from '../context/AuthContext';
 import { useContext } from 'react';
 import Transfers from '../pages/Transfers';
 import LoadingSpinner from '../components/Loading-spinner';
+import NotFound from '../pages/NotFound';
 
 export default function AppRoutes() {
   const Private = ({ children }: any) => {
