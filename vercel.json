@@ -1,28 +1,3 @@
 {
-    "routes": [
-        {
-            "src": "/",
-            "dest": "/"
-        },
-        {
-            "src": "/login",
-            "dest": "/login"
-        },
-        {
-            "src": "/cadastrar",
-            "dest": "/cadastrar"
-        },
-        {
-            "src": "/transferir",
-            "dest": "/transferir"
-        },
-        {
-            "src": "/transferencias",
-            "dest": "/transferencias"
-        },
-        {
-            "src": "*",
-            "dest": "*"
-        }
-    ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
